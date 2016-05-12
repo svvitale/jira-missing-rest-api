@@ -1,0 +1,7 @@
+target
+*.iml
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/libraries
+*.orig
+.idea/encodings.xml
