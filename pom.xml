@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.svvitale.rest</groupId>
     <artifactId>missing</artifactId>
-    <version>1.0.1beta</version>
+    <version>1.0.1</version>
     <organization>
         <name>Scott Vitale</name>
         <url>http://vitale.io/</url>
