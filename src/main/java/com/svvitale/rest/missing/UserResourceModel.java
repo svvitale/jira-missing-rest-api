@@ -4,6 +4,7 @@ import com.atlassian.jira.bc.user.search.UserSearchParams;
 import com.atlassian.jira.bc.user.search.UserSearchService;
 import com.atlassian.jira.component.ComponentAccessor;
 import com.atlassian.jira.user.ApplicationUser;
+import com.atlassian.jira.user.util.UserManager;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -27,8 +28,9 @@ public class UserResourceModel {
         List<UserResourceModel> matchingUsers = new ArrayList<UserResourceModel>();
 
         // Get the user search service
+        UserManager userManager = ComponentAccessor.getComponent(UserManager.class);
         UserSearchService userSearchService = ComponentAccessor.getComponent(UserSearchService.class);
-        UserSearchParams userSearchParams = new UserSearchParams(true, true, false);
+        UserSearchParams userSearchParams = new UserSearchParams(true, true, false, true, null, null, null, userManager.getTotalUserCount(), true);
 
         // Perform the search and turn each user into a serializable result
         for (ApplicationUser user : userSearchService.findUsers(partialUserName, userSearchParams)) {
